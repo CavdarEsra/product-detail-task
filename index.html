@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <script src="https://unpkg.com/alpinejs" defer></script> -->
+</head>
+
+<body>
+    <!-- <div class="flex w-full h-screen p-12">
+        <div class="w-1/2 bg-red-200">
+            <img src="images/foto1.jpg" class="w-full h-4/5 mx-auto max-w-full">
+        </div>
+        <div class="w-1/2 bg-blue-200">
+            bgbr
+        </div>
+    </div>     -->
+    <div class="kapsayici">
+        <div class="sol">
+            <img src="images/foto1.jpg" class="big-image">
+            <div class="small-images">
+                <div class="arrow-left">
+                    <i class="fa-solid fa-chevron-left" style="color: #000000;"></i>
+                </div>
+                <div class="small-image"><img src="images/foto1.jpg" class="thumbnail active"></div>
+                <div class="small-image"><img src="images/foto2.jpg" class="thumbnail"></div>
+                <div class="small-image"><img src="images/foto3.jpg" class="thumbnail"></div>
+                <div class="small-image"><img src="images/foto4.jpg" class="thumbnail"></div>
+                <div class="small-image"><img src="images/foto5.jpg" class="thumbnail"></div>
+                <div class="arrow-right">
+                    <i class="fa-solid fa-chevron-right" style="color: #000000;"></i>
+                </div>
+            </div>
+        </div>
+        <div class="product__details p-4">
+            <div class="title pl-4">
+                <h1 class="text-4xl font-light mb-2">Apple iPhone 6s Rose Gold Front Pane</h1>
+            </div>
+            <div class="comment pl-4 mb-5">
+                <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+                <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+                <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+                <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+                <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+                <span class="ml-1 text-blue-600 font-light">23 Yorum</span>
+            </div>
+            <div class="price pl-4 mb-4">
+                <p class="text-4xl font-normal mb-0">3.000,00 TL - 3.300,00 TL <span class="text-base opacity-40 "> /
+                        Adet</span></p>
+                <span class="text-base opacity-40">100 Adet(Minimum Sipariş Adedi)</span>
+            </div>
+            <div class="memory pl-4 flex items-center space-x-4 mb-5">
+                <p class="w-1/6 text-start">Hafıza</p>
+                <span class="w-1/12 text-center">:</span>
+                <button class="memory-button w-1/4 text-center border border-gray-300 hover:border-gray-400">64GB
+                    <br>Ücretsiz</button>
+                <button class="memory-button w-1/4 text-center border border-gray-300 hover:border-gray-400">128GB
+                    <br>Ücretsiz</button>
+                <button class="memory-button w-1/4 text-center border border-gray-300 hover:border-gray-400">256GB
+                    <br>Ücretsiz</button>
+            </div>
+            <div class="color pl-4 flex items-center space-x-4 mb-5">
+                <p class="w-1/6 text-start">Renk</p>
+                <span class="w-1/12 text-center">:</span>
+                <button class="color-button w-1/4 p-3 text-center border border-gray-300 hover:border-gray-400">Rose
+                    Gold</button>
+                <button
+                    class="color-button w-1/4 p-3 text-center border border-gray-300 hover:border-gray-400">Black</button>
+                <button
+                    class="color-button w-1/4 p-3 text-center border border-gray-300 hover:border-gray-400">Silver</button>
+            </div>
+            <div class="price-detail pl-4 py-4 bg-slate-100">
+                <div class="flex items-center mb-4">
+                    <p class="w-1/6 text-start">Toptan Fiyat <br>(Adet)</p>
+                    <span class="w-1/12 self-baseline text-center">:</span>
+                    <button class="w-1/6 pr-4 border-r price-button">100 - 199 <br> 1300 TL</button>
+                    <button class="w-1/6 pr-4 border-r price-button">200 - 299 <br> 880 TL</button>
+                    <button class="w-1/6 pr-4 border-r price-button">300 - 499 <br> 550 TL</button>
+                    <button class="w-1/6 price-button">500 - 699 <br> 300 TL</button>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-1/4"></div>
+                    <button class="w-1/6 pr-4 border-r price-button">700 - 899 <br> 250 TL</button>
+                    <button class="w-1/6 pr-4 border-r price-button">900 - 999 <br> 200 TL</button>
+                    <button class="w-1/6 pr-4 border-r price-button">1000 - 1999 <br> 180 TL</button>
+                    <button class="w-1/6 price-button">2000 + <br> 150 TL</button>
+                </div>
+            </div>
+        <div class="stock pl-4">
+            <p>Toptan Fiyat <br>(Adet)</p>
+            <span>:</span>
+            <input type="text">100
+            <span>Adet</span>
+            <p>Stok Adedi : <span>500</span></p>
+        </div>
+        <div class="total-price pl-4">
+            <p>Toptan Fiyat <br>(Adet)</p>
+            <span>:</span>
+            <span>300.000, TL <br>
+                <i class="fa-solid fa-truck"></i> <span>Kargo Ücreti: <span>Alıcı Öder</span></span>
+            </span>
+        </div>
+        <div class="add-basket">
+            <button>SEPETE EKLE</button> <a>Ödeme Seçenekleri</a>
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
