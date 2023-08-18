@@ -10,27 +10,53 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://unpkg.com/alpinejs" defer></script>
+    <!-- <script src="https://unpkg.com/alpinejs" defer></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
 </head>
+
 <body>
-    <div class="product">
-        <div class="product__slider">
-            <img src="images/foto1.jpg" class="big-image">
-            <div class="small-images">
-                <div class="arrow-left">
-                    <i class="fa-solid fa-chevron-left" style="color: #000000;"></i>
+    <div class="product flex w-full h-screen p-16">
+
+        <div x-data="{ selectedImage: 'images/foto1.jpg' }"
+            class="product__slider w-1/2 h-full flex flex-col justify-center items-center">
+
+            <img :src="selectedImage" class="big-image h-4/5">
+            <div class="small-images flex items-center justify-between gap-4 p-4">
+                <div class="arrow-left flex items-center justify-center">
+                    <i class="fa-solid fa-chevron-left text-black" style="color: #000000;"></i>
                 </div>
-                <div class="small-image"><img src="images/foto1.jpg" class="thumbnail active"></div>
-                <div class="small-image"><img src="images/foto2.jpg" class="thumbnail"></div>
-                <div class="small-image"><img src="images/foto3.jpg" class="thumbnail"></div>
-                <div class="small-image"><img src="images/foto4.jpg" class="thumbnail"></div>
-                <div class="small-image"><img src="images/foto5.jpg" class="thumbnail"></div>
-                <div class="arrow-right">
-                    <i class="fa-solid fa-chevron-right" style="color: #000000;"></i>
+                <div class="small-image flex-1 border border-gray-400 h-full flex items-center justify-center"
+                    :class="{ 'border-black border-2': selectedImage === 'images/foto1.jpg' }"
+                    x-on:click="selectedImage = 'images/foto1.jpg'">
+                    <img src="images/foto1.jpg" class="thumbnail object-center h-4/5">
+                </div>
+                <div class="small-image flex-1 border border-gray-400 h-full flex items-center justify-center"
+                    :class="{ 'border-black border-2': selectedImage === 'images/foto2.jpg' }"
+                    x-on:click="selectedImage = 'images/foto2.jpg'">
+                    <img src="images/foto2.jpg" class="thumbnail object-center h-full">
+                </div>
+                <div class="small-image flex-1 border border-gray-400 h-full flex items-center justify-center"
+                    :class="{ 'border-black border-2': selectedImage === 'images/foto3.jpg' }"
+                    x-on:click="selectedImage = 'images/foto3.jpg'">
+                    <img src="images/foto3.jpg" class="thumbnail object-center h-full">
+                </div>
+                <div class="small-image flex-1 border border-gray-400 h-full flex items-center justify-center"
+                    :class="{ 'border-black border-2': selectedImage === 'images/foto4.jpg' }"
+                    x-on:click="selectedImage = 'images/foto4.jpg'">
+                    <img src="images/foto4.jpg" class="thumbnail object-center h-full">
+                </div>
+                <div class="small-image flex-1 border border-gray-400 h-full flex items-center justify-center"
+                    :class="{ 'border-black border-2': selectedImage === 'images/foto5.jpg' }"
+                    x-on:click="selectedImage = 'images/foto5.jpg'">
+                    <img src="images/foto5.jpg" class="thumbnail object-center h-full">
+                </div>
+                <div class="arrow-right flex items-center justify-center">
+                    <i class="fa-solid fa-chevron-right text-black" style="color: #000000;"></i>
                 </div>
             </div>
         </div>
-        <div class="product__details p-4">
+
+        <div class="product__details w-1/2 h-full p-4">
             <div class="title pl-4">
                 <h1 class="text-4xl font-light mb-2">Apple iPhone 6s Rose Gold Front Pane</h1>
             </div>
@@ -73,38 +99,47 @@
                     <p class="w-1/6 text-start">Renk</p>
                     <span class="w-1/12 text-center">:</span>
                     <button x-on:click="selectedColor = 'rosegold'"
-                        :class="{ 'color-button': true, 'w-1/4 p-3 text-center border border-gray-300': true,  'border-gray-950 border-2': selectedColor === 'rosegold' }">Rose Gold</button>
-                        <button x-on:click="selectedColor = 'black'"
+                        :class="{ 'color-button': true, 'w-1/4 p-3 text-center border border-gray-300': true,  'border-gray-950 border-2': selectedColor === 'rosegold' }">Rose
+                        Gold</button>
+                    <button x-on:click="selectedColor = 'black'"
                         :class="{ 'color-button':true, 'w-1/4 p-3 text-center border border-gray-300': true,  'border-gray-950 border-2': selectedColor === 'black' }">Black</button>
                     <button x-on:click="selectedColor = 'silver'"
                         :class="{ 'color-button':true, 'w-1/4 p-3 text-center border border-gray-300': true,  'border-gray-950 border-2': selectedColor === 'silver' }">Silver</button>
                 </div>
             </div>
-            
+
             <div class="price-detail pl-4 py-4 bg-slate-100">
                 <div x-data="{ selectedPrice: null}">
                     <div class="flex items-center mb-4">
                         <p class="w-1/6 text-start">Toptan Fiyat <br>(Adet)</p>
                         <span class="w-1/12 self-baseline text-center">:</span>
-                        <button x-on:click="selectedPrice = '100'" 
-                        :class="{ 'w-1/6 pr-4 border-r price-button': true, 'bg-yellow-200': selectedPrice === '100' }"> 100 - 199 <br> 1300 TL</button>
-                        <button x-on:click="selectedPrice = '200'" 
-                        :class="{ 'w-1/6 pr-4 border-r price-button': true, 'bg-yellow-200': selectedPrice === '200' }"> 200 - 299 <br> 880 TL</button>
-                        <button x-on:click="selectedPrice = '300'" 
-                        :class="{ 'w-1/6 pr-4 border-r price-button': true, 'bg-yellow-200': selectedPrice === '300' }">300 - 499 <br> 550 TL</button>
-                        <button x-on:click="selectedPrice = '400'" 
-                        :class="{ 'w-1/6 pr-4 border-r price-button': true, 'bg-yellow-200': selectedPrice === '400' }">500 - 699 <br> 300 TL</button>
+                        <button x-on:click="selectedPrice = '100'"
+                            :class="{ 'w-1/6 pr-4 border-r price-button': true, 'bg-yellow-200': selectedPrice === '100' }">
+                            100 - 199 <br> 1300 TL</button>
+                        <button x-on:click="selectedPrice = '200'"
+                            :class="{ 'w-1/6 pr-4 border-r price-button': true, 'bg-yellow-200': selectedPrice === '200' }">
+                            200 - 299 <br> 880 TL</button>
+                        <button x-on:click="selectedPrice = '300'"
+                            :class="{ 'w-1/6 pr-4 border-r price-button': true, 'bg-yellow-200': selectedPrice === '300' }">300
+                            - 499 <br> 550 TL</button>
+                        <button x-on:click="selectedPrice = '400'"
+                            :class="{ 'w-1/6 pr-4 border-r price-button': true, 'bg-yellow-200': selectedPrice === '400' }">500
+                            - 699 <br> 300 TL</button>
                     </div>
                     <div class="flex items-center">
                         <div class="w-1/4"></div>
-                        <button x-on:click="selectedPrice = '500'" 
-                        :class="{ 'w-1/6 pr-4 border-r price-button': true, 'bg-yellow-200': selectedPrice === '500' }">700 - 899 <br> 250 TL</button>
-                        <button x-on:click="selectedPrice = '600'" 
-                        :class="{ 'w-1/6 pr-4 border-r price-button': true, 'bg-yellow-200': selectedPrice === '600' }">900 - 999 <br> 200 TL</button>
+                        <button x-on:click="selectedPrice = '500'"
+                            :class="{ 'w-1/6 pr-4 border-r price-button': true, 'bg-yellow-200': selectedPrice === '500' }">700
+                            - 899 <br> 250 TL</button>
+                        <button x-on:click="selectedPrice = '600'"
+                            :class="{ 'w-1/6 pr-4 border-r price-button': true, 'bg-yellow-200': selectedPrice === '600' }">900
+                            - 999 <br> 200 TL</button>
                         <button x-on:click="selectedPrice = '700'"
-                        :class="{ 'w-1/6 pr-4 border-r price-button': true, 'bg-yellow-200': selectedPrice === '700' }">1000 - 1999 <br> 180 TL</button>
-                        <button x-on:click="selectedPrice = '800'" 
-                        :class="{ 'w-1/6 pr-4 border-r price-button': true, 'bg-yellow-200': selectedPrice === '800' }">2000 + <br> 150 TL</button>
+                            :class="{ 'w-1/6 pr-4 border-r price-button': true, 'bg-yellow-200': selectedPrice === '700' }">1000
+                            - 1999 <br> 180 TL</button>
+                        <button x-on:click="selectedPrice = '800'"
+                            :class="{ 'w-1/6 pr-4 border-r price-button': true, 'bg-yellow-200': selectedPrice === '800' }">2000
+                            + <br> 150 TL</button>
                     </div>
                 </div>
 
@@ -138,4 +173,5 @@
         <span x-text="hello"> </span>
     </div> -->
 </body>
+
 </html>
